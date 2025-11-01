@@ -1,0 +1,35 @@
+html {
+    background-color: #1595c7;
+    height: 100vh;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+.top{
+    font: bold 40px/1.5 Georgia, serif;
+    text-align: center;
+    color: white;
+}
+
+.name{
+    font: bold 40px/1.5 Georgia, serif;
+    text-align: center;
+    color: #8f0606;
+}
+
+.main{
+    font: bold 40px/1.5 "Comic Sans MS", serif;
+    text-align: center;
+    color: #9e0e6e;
+}
+
+.woman_with_cam{
+    display: block;
+    max-width: 60%;
+    height: auto;
+    margin: 40px auto;
+    border-radius: 10px;
+}

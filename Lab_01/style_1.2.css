@@ -1,0 +1,32 @@
+html {
+    background-color: #9d68f4;
+    height: 100vh;
+}
+
+body {
+
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.tablica{
+    background-color: #b59696;
+    border-collapse: collapse;
+    border: 20px solid #a10046;
+    font-size: 40px;
+    height: 50%;
+}
+.tablica th , .tablica td{
+    padding: 10px;
+}
+
+.link_bottom{
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: black;
+}
