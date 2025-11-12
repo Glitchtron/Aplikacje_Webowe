@@ -1,0 +1,61 @@
+@font-face {
+    font-family: ranmaFont;
+    src: url("fonts/YuseiMagic-Regular.ttf")
+}
+body{
+    margin: 0 25%;
+    background-image: url("images/Background.png");
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center;
+}
+header {
+    margin: 30px;
+    border: #6e97fa solid 5px;
+    border-radius: 50px;
+    font: bold 35px/1.5 ranmaFont ;
+    background-color: #cd39a5;
+    padding : 10px;
+    text-align: center;
+}
+
+article{
+    background-color: beige;
+    padding : 20px;
+    text-align: center;
+}
+
+nav {
+    display : flex;
+    background-color: #6e97fa;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.link{
+    margin: 0;
+    padding: 10px;
+    background-color: #99f1db;
+    border: black solid 5px;
+    border-radius: 20px;
+}
+
+#SeriesPhoto{
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background: #570030;
+    font : bold 20px/1.5 ranmaFont;
+    text-align: center;
+    color : yellowgreen;
+}
+
+.link:hover{
+    background-color: #72b5a1;
+    border: black solid 5px;
+}
+
