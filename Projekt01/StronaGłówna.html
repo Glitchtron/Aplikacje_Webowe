@@ -15,7 +15,6 @@
         <a class="link" href="Galeria.html"> Gallery</a>
         <a class="link" href="StronaGłówna.html">HOME</a>
         <a class="link" href="Kontakt.html">Contact</a>
-        <a class="link">Social Media</a>
     </nav>
     <article>
 
@@ -39,13 +38,45 @@
         <p>Glad you asked! Basically, the story revolves around a 16-year-old boy named Ranma Saotome who was trained from early childhood in martial arts. As a result of an accident during a training journey in China, he is cursed to become a girl when splashed with cold water, but hot water will change him back into a boy. What ensues is a plethora of hilarious shenanigans that have to do with Ranma's unique condition, as well as the marriage that him and Akane Tendo of the Tendo Dojo have been forcefully put in. If you've seen even one episode of the series, you'll know exactly what I'm talking about. And if not....what are you waiting for! </p>
         <br>
         <h2>Main Characters</h2>
-        <div class = "characters">
-            <ul>
-                <li id="s1">Ranma</li>
-                <li id="s2">Ranma</li>
-                <li id="s3">Ranma</li>
-            </ul>
-            <img id="Character_image" src="images/RanmaFemale.webp" alt="Saotome_Ranma_Female">
+        <div class="characters">
+            <div class="button_container">
+                <p id = "s1" class="buttons">
+                    Ranma Saotome
+                </p>
+                <p id="s2" class="buttons">
+                    Ranma Saotome (Female)
+                </p>
+                <p id ="s3" class="buttons">
+                    Ryoga Hibiki
+                </p>
+                <p id ="s4" class="buttons">
+                    Akane Tendo
+                </p>
+            </div>
+            <div class = "obrazy_do_zmieniania" id="ob1">
+                <p>
+                    Ranma Saotome (早乙女 乱馬, Saotome Ranma) is the sixteen year old heir to the Saotome Branch of Anything Goes Martial Arts, the only child of Genma Saotome and Nodoka Saotome, the self-acknowledged fiancé of Akane Tendo, and the reluctant fiancé of Shampoo, Ukyo Kuonji and numerous others. Ranma is known not only for his exceptional martial arts skills but also for his unpredictable personality, ranging from cocky and stubborn to surprisingly thoughtful. Due to a cursed spring during a training journey in China, he transforms into a girl whenever he is splashed with cold water, reverting to his male form with hot water—a predicament that leads to endless comedic chaos. Despite his frequent bickering with Akane, he often shows glimpses of genuine care and loyalty, especially when his friends or family are in danger.
+                </p>
+                <img id="Ranma_image" src="images/RanmaMale.webp" alt="Saotome_Ranma">
+            </div>
+            <div class = "obrazy_do_zmieniania" id="ob2">
+                <p>
+                    Ranma Saotome (早乙女 乱馬, Saotome Ranma) is the sixteen year old heir to the Saotome Branch of Anything Goes Martial Arts, the only child of Genma Saotome and Nodoka Saotome, the self-acknowledged fiancé of Akane Tendo, and the reluctant fiancé of Shampoo, Ukyo Kuonji and numerous others. Ranma is known not only for his exceptional martial arts skills but also for his unpredictable personality, ranging from cocky and stubborn to surprisingly thoughtful. Due to a cursed spring during a training journey in China, he transforms into a girl whenever he is splashed with cold water, reverting to his male form with hot water—a predicament that leads to endless comedic chaos. Despite his frequent bickering with Akane, he often shows glimpses of genuine care and loyalty, especially when his friends or family are in danger.
+                </p>
+                <img id="FemRanma_image" src="images/RanmaFemale.webp" alt="Saotome_Ranma_Female">
+            </div>
+            <div class = "obrazy_do_zmieniania" id="ob3">
+                <p>
+                    Ryoga Hibiki (響 良牙, Hibiki Ryoga) is a sixteen-year-old martial artist known for his incredible strength, stubbornness, and notoriously terrible sense of direction. A former rival of Ranma, he harbors a deep grudge after a series of humiliating defeats, which fuels both his determination and comic misadventures. Like Ranma, Ryoga suffers from a curse: whenever he comes into contact with cold water, he shrinks into a small, piglet-like form, returning to normal with hot water—a curse that adds constant chaos to his already tumultuous life. Despite his gruff demeanor, Ryoga has a surprisingly sensitive side, especially when it comes to his unrequited love for Akane. His combination of raw power, comic misfortune, and underlying vulnerability makes him both a formidable opponent and a lovable character in the series.
+                </p>
+                <img id="Ryoga_image" src="images/ryoga_hibiki_anime_2024.webp" alt="Habiki_Ryoga">
+            </div>
+            <div class = "obrazy_do_zmieniania" id="ob4">
+                <p>
+                    Akane Tendo (天道 あかね, Tendo Akane) is a sixteen-year-old martial artist and the youngest daughter of the Tendo family, which runs a dojo specializing in Anything Goes Martial Arts. Fierce, independent, and quick-tempered, she balances her tough exterior with a strong sense of justice and loyalty toward her friends and family. Despite her frequent frustrations with Ranma’s antics, she cares deeply for him and often finds herself reluctantly drawn into his chaotic world. Known for her exceptional skill in martial arts, her determination and resilience often rival even the most seasoned fighters. Outside of combat, Akane struggles with typical teenage concerns and her complicated feelings for Ranma, creating a blend of humor, tension, and heartfelt moments that define her character.
+                </p>
+                <img id="Akane_image" src="images/Akane_Tendo_(Anime_2024_Ver._2).webp" alt="Tendo_Akane">
+            </div>
         </div>
     </article>
     <footer>
@@ -53,9 +84,23 @@
     </footer>
     <script>
         function change_image(name){
-            const img = document.getElementById("Character_image")
-
+            const obrazy = document.getElementsByClassName("obrazy_do_zmieniania")
+            for (let element of obrazy) {
+                element.style.display = "none";
+            }
+            const el = document.getElementById(name)
+            el.style.display = "flex";
         }
+        change_image("ob1")
+        const bt1 = document.getElementById("s1");
+        bt1.addEventListener("click", () => change_image("ob1"));
+        const bt2 = document.getElementById("s2");
+        bt2.addEventListener("click", () => change_image("ob2"));
+        const bt3 = document.getElementById("s3");
+        bt3.addEventListener("click", () => change_image("ob3"));
+        const bt4 = document.getElementById("s4");
+        bt4.addEventListener("click", () => change_image("ob4"));
+
     </script>
 </body>
 </html>

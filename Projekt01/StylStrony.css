@@ -4,7 +4,7 @@
 }
 body{
     margin: 0 25%;
-    background-image: url("images/Background.png");
+    background-image: url("images/SiteBackground.png");
     background-size: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -114,6 +114,7 @@ label{
 .Galeria{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     width: 100%;
     justify-content: center;
     max-width: 100%;
@@ -121,6 +122,13 @@ label{
 .Galeria img{
     max-width: 100%;
     width: 300px;
+    height: auto;
+    display: block;
+    padding: 3%;
+}
+.Galeria video{
+    max-width: 100%;
+    width: 600px;
     display: block;
     padding: 5%;
 }
@@ -134,17 +142,31 @@ label{
     display: flex;
     gap : 20px;
     align-items: center;
+    flex-direction: column;
 }
-.characters ul{
-    flex : 1;
-}
-.characters ul li{
+.buttons{
     padding : 10px;
-    border: #6e97fa solid 5px;
+    border: black solid 5px;
     border-radius: 50px;
-    background-color: #6e97fa;
+    background-color: #99f1db;
     margin: 5px;
 }
-.characters img{
-    flex : 5;
+.buttons:hover{
+    background-color: #72b5a1;
+    border: black solid 5px;
 }
+.button_container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.obrazy_do_zmieniania img {
+    max-width: 250px;
+    height: auto;
+}
+.obrazy_do_zmieniania{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
