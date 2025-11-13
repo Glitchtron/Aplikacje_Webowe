@@ -13,23 +13,37 @@ header {
     margin: 30px;
     border: #6e97fa solid 5px;
     border-radius: 50px;
-    font: bold 35px/1.5 ranmaFont ;
-    background-color: #cd39a5;
-    padding : 10px;
+    font: bold 25px/1.5 ranmaFont ;
+    background-color: #a53765;
+    padding : 5px;
     text-align: center;
 }
 
 article{
+    font: 18px/1.5 ranmaFont ;
     background-color: beige;
-    padding : 20px;
+    padding : 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+h2{
+    margin : 0;
+}
+h3{
+    margin : 0;
+}
+.Przywitanie{
+    font: bold 20px/1.5 ranmaFont ;
     text-align: center;
 }
-
 nav {
     display : flex;
     background-color: #6e97fa;
     flex-direction: row;
     justify-content: space-evenly;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font: normal bold 14px/1.5 ranmaFont ;
 }
 
 .link{
@@ -52,6 +66,7 @@ footer {
     font : bold 20px/1.5 ranmaFont;
     text-align: center;
     color : yellowgreen;
+    border-radius : 10px;
 }
 
 .link:hover{
@@ -59,3 +74,77 @@ footer {
     border: black solid 5px;
 }
 
+input{
+    border: #6e97fa solid 5px;
+    border-radius: 50px;
+    font: bold 20px/1.5 ranmaFont ;
+}
+input:hover{
+    background-color: #72b5a1;
+    border: black solid 5px;
+}
+select{
+    border: #6e97fa solid 5px;
+    border-radius: 50px;
+    font: bold 20px/1.5 ranmaFont ;
+}
+
+textarea{
+    border: #6e97fa solid 5px;
+    border-radius: 50px;
+    font: bold 20px/1.5 ranmaFont ;
+    padding: 5%;
+}
+
+label{
+    font : bold 20px/1.5 ranmaFont ;
+}
+
+.kontakt{
+    display: flex;
+    flex-direction : column;
+    align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction : column;
+    padding: 5%;
+}
+
+.Galeria{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    max-width: 100%;
+}
+.Galeria img{
+    max-width: 100%;
+    width: 300px;
+    display: block;
+    padding: 5%;
+}
+
+#MangaCover{
+    display: block;
+    float: right;
+    width: 50%
+}
+.characters{
+    display: flex;
+    gap : 20px;
+    align-items: center;
+}
+.characters ul{
+    flex : 1;
+}
+.characters ul li{
+    padding : 10px;
+    border: #6e97fa solid 5px;
+    border-radius: 50px;
+    background-color: #6e97fa;
+    margin: 5px;
+}
+.characters img{
+    flex : 5;
+}
