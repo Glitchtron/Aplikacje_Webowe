@@ -2,29 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ranma 1/2 FanSite</title>
+    <title>Gallery</title>
     <link rel="icon" href="images/favicon-32x32.png">
     <link rel="stylesheet" href="StylStrony.css">
 </head>
 <body>
     <header>
-        <h1> Ranma Saotome FanClub!</h1>
+        <h1> Ranma 1/2 FanClub!</h1>
     </header>
 
     <hr>
     <nav>
         <a class="link" href="Galeria.html"> Gallery</a>
-        <a class="link" href="StronaGłówna.html">HOME</a>
+        <a class="link" href="index.html">HOME</a>
         <a class="link" href="Kontakt.html">Contact</a>
-        <a class="link">Social Media</a>
     </nav>
     <article>
-        <form action="" method="get" target="" class = "kontakt">
+        <form action="" method="post" target="" class = "kontakt">
             <div class = "container">
                 <label for="email">Email</label>
-                <input type="text" id="email" name="email" placeholder="Enter your e-mail">
+                <input type="text" id="email" name="email" placeholder="Enter your e-mail" required pattern="@">
                 <label for="temat">Message Subject</label>
-                <select id="temat" name="temat">
+                <select id="temat" name="temat" required>
                     <option value="anim89">Anime 1989</option>
                     <option value="manga">Manga</option>
                     <option value="anim24">Anime 2024</option>
