@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Produkty</title>
+    <link rel="stylesheet" href="dane_style.css">
+</head>
+<body>
+
+<div class="controls">
+    <input type="text" id="filterInput" placeholder="Szukaj...">
+    <select id="sortSelect">
+        <option value="original">Oryginalna kolejność</option>
+        <option value="asc">Rosnąco</option>
+        <option value="desc">Malejąco</option>
+    </select>
+</div>
+
+<div class="grid_container" id="grid">
+    <div class="header">Zdjęcie</div>
+    <div class="header">Tytuł</div>
+    <div class="header">Opis</div>
+</div>
+
+<script>
+    let originalList = [];
+
+    async function load() {
+        const res = await fetch("https://dummyjson.com/products");
+        const data = await res.json();
+        originalList = data.products;
+        render(originalList);
+    }
+
+    function render(list) {
+        const container = document.getElementById("grid");
+        container.innerHTML = `
+            <div class="header">Zdjęcie</div>
+            <div class="header">Tytuł</div>
+            <div class="header">Opis</div>
+        `;
+
+        list.forEach(item => {
+            container.innerHTML += `
+                <div class="zdjecie"><img src="${item.images[0]}" alt="${item.title}"></div>
+                <div class="tytul">${item.title}</div>
+                <div class="opis">${item.description}</div>
+            `;
+        });
+    }
+
+    const filterInput = document.getElementById("filterInput");
+    filterInput.addEventListener("input", () => {
+        applyFilterAndSort();
+    });
+
+    const sortSelect = document.getElementById("sortSelect");
+    sortSelect.addEventListener("change", () => {
+        applyFilterAndSort();
+    });
+
+    function applyFilterAndSort() {
+        let filtered = originalList.filter(item =>
+            item.title.toLowerCase().includes(filterInput.value.toLowerCase())
+        );
+
+        const sortValue = sortSelect.value;
+        if (sortValue === "asc") {
+            filtered.sort((a,b) => a.title.localeCompare(b.title));
+        } else if (sortValue === "desc") {
+            filtered.sort((a,b) => b.title.localeCompare(a.title));
+        }
+
+        render(filtered);
+    }
+
+    load();
+</script>
+</body>
+</html>

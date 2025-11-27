@@ -1,0 +1,10 @@
+body { font-family: Arial, sans-serif; }
+.controls { margin-bottom: 20px; }
+.grid_container {
+    display: grid;
+    grid-template-columns: 150px 1fr 2fr;
+    gap: 10px;
+    align-items: start;
+}
+img { max-width: 100%; }
+.header { font-weight: bold; background: #eee; padding: 5px; }

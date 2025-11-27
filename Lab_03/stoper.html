@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stoper</title>
+    <link rel="stylesheet" href="stoper_style.css">
+</head>
+<body>
+<div class="time">
+    <div>
+        <h1 id="minutes">00</h1>
+        <h1>min.</h1>
+    </div>
+    <div>
+        <h1 id="seconds">00</h1>
+        <h1>s</h1>
+    </div>
+</div>
+<div class="buttons">
+    <p id="s1">START</p>
+    <p id="s2">STOP</p>
+    <p id="s3">RESET</p>
+</div>
+<script>
+    const minutes = document.querySelector('#minutes');
+    const seconds = document.querySelector('#seconds');
+    const minutesBox = document.querySelector('.time div:first-child');
+
+    const duration = 1 * 60 * 1000;
+
+    let remaining = duration;
+    let timerInterval = null;
+    let lastTick = null;
+
+    function updateDisplay(ms) {
+        let mins = Math.floor(ms / 1000 / 60);
+        let secs = Math.floor((ms / 1000) % 60);
+
+        minutes.textContent = mins;
+        seconds.textContent = secs;
+
+        if (mins <= 0) {
+            minutesBox.style.display = "none";
+        } else {
+            minutesBox.style.display = "flex";
+        }
+    }
+
+    function startTimer() {
+        if (timerInterval !== null) return;
+
+        lastTick = Date.now();
+
+        timerInterval = setInterval(() => {
+            const now = Date.now();
+            const diff = now - lastTick;
+
+            if (diff >= 1000) {
+                const secondsPassed = Math.floor(diff / 1000);
+                remaining -= secondsPassed * 1000;
+                lastTick += secondsPassed * 1000;
+            }
+
+            if (remaining <= 0) {
+                remaining = 0;
+                updateDisplay(0);
+                stopTimer();
+                return;
+            }
+
+            updateDisplay(remaining);
+        }, 200);
+    }
+
+
+    function stopTimer() {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+
+    function resetTimer() {
+        stopTimer();
+        remaining = duration;
+        updateDisplay(remaining);
+    }
+
+
+    updateDisplay(remaining);
+
+    // ---- PRZYCISKI ----
+    document.getElementById("s1").addEventListener("click", startTimer);
+    document.getElementById("s2").addEventListener("click", stopTimer);
+    document.getElementById("s3").addEventListener("click", resetTimer);
+
+
+</script>
+</body>
+</html>

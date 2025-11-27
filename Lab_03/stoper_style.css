@@ -1,0 +1,44 @@
+html,body{
+    height: 100%;
+    margin: 0;
+}
+p{
+    font-size: 30px;
+}
+body{
+    background-color: mediumvioletred;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttons p{
+    padding: 20px;
+    background-color: lightgray;
+    border: 3px solid #a19d9d;
+    font-size: 30px;
+}
+
+.buttons p:hover{
+    background-color: #817d7d;
+    border-color: #494343;
+}
+
+.time{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.time div{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
